@@ -9,5 +9,4 @@ use Tests\TestCase;
  */
 class OrderControllerTest extends TestCase
 {
-    
 }
