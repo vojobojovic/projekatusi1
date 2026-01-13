@@ -10,9 +10,7 @@ class Product extends Model
     use HasFactory;
 
     /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
+     * Polja koja dozvoljavamo da se upisuju u bazu (Mass Assignment).
      */
     protected $fillable = [
         'name',
@@ -22,12 +20,20 @@ class Product extends Model
     ];
 
     /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
+     * Kastovanje tipova podataka.
      */
     protected $casts = [
         'id' => 'integer',
         'price' => 'decimal:2',
+        'category_id' => 'integer',
     ];
+
+    /**
+     * RELACIJA: Svaki proizvod pripada jednoj kategoriji.
+     * Ovo popravlja grešku "Call to undefined relationship [category]"
+     */
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

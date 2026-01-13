@@ -7,9 +7,8 @@
             padding-bottom: 50px !important;
         }
 
-        /* NOVA SIVA POZADINA ZA CELI EKRAN */
         .butik-main-bg {
-            background-color: #f3f4f6 !important; /* Svetlo siva (Tailwind gray-100 fazon) */
+            background-color: #f3f4f6 !important;
         }
 
         .butik-title-main {
@@ -60,18 +59,24 @@
 
             <div class="text-center mb-12">
                 <h1 class="text-3xl font-bold font-serif mb-2">Butik Wolley Admin</h1>
-                <p style="font-family: 'Comic Sans MS'; font-style: italic;">Upravljajte katalogom i zakazivanjima</p>
+                <p style="font-family: 'Comic Sans MS'; font-style: italic;">Upravljajte katalogom, korisnicima i zakazivanjima</p>
             </div>
 
             <div class="flex flex-col items-center">
                 <div class="btn-container">
                     <a href="{{ route('product.index') }}" class="butik-btn">Katalog proizvoda</a>
                 </div>
+
                 <div class="btn-container">
                     <a href="{{ route('product.create') }}" class="butik-btn">Dodaj novi proizvod</a>
                 </div>
+
                 <div class="btn-container">
-                    <button onclick="alert('Pregled zakazanih termina...')" class="butik-btn">Zakazi termin</button>
+                    <a href="{{ route('appointment.index') }}" class="butik-btn">Zakazani termini</a>
+                </div>
+
+                <div class="btn-container">
+                    <a href="{{ route('user.index') }}" class="butik-btn">Korisnici sistema</a>
                 </div>
             </div>
         </div>
