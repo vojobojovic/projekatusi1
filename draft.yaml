@@ -1,0 +1,33 @@
+models:
+  Category:
+    name: string:255
+  Product:
+    name: string:255
+    description: text
+    price: decimal:8,2
+    category_id: foreignId:categories
+  User:
+    name: string:255
+    email: string:255:unique
+    password: string:255
+  Order:
+    user_id: foreignId:users
+    product_id: foreignId:products
+    quantity: integer
+    status: string:50
+
+controllers:
+  CategoryController:
+    resource: true
+  ProductController:
+    resource: true
+  UserController:
+    resource: true
+  OrderController:
+    resource: true
+
+seeders:
+  - Category
+  - Product
+  - User
+  - Order

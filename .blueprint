@@ -1,0 +1,29 @@
+created:
+    - app/Http/Controllers/CategoryController.php
+    - app/Http/Controllers/ProductController.php
+    - app/Http/Controllers/UserController.php
+    - app/Http/Controllers/OrderController.php
+    - database/factories/CategoryFactory.php
+    - database/factories/ProductFactory.php
+    - database/factories/UserFactory.php
+    - database/factories/OrderFactory.php
+    - database/migrations/2026_01_13_150648_create_categories_table.php
+    - database/migrations/2026_01_13_150649_create_products_table.php
+    - database/migrations/2026_01_13_150650_create_users_table.php
+    - database/migrations/2026_01_13_150651_create_orders_table.php
+    - app/Models/Category.php
+    - app/Models/Product.php
+    - app/Models/User.php
+    - app/Models/Order.php
+    - database/seeders/CategoryProductUserOrderSeeder.php
+    - tests/Feature/Http/Controllers/CategoryControllerTest.php
+    - tests/Feature/Http/Controllers/ProductControllerTest.php
+    - tests/Feature/Http/Controllers/UserControllerTest.php
+    - tests/Feature/Http/Controllers/OrderControllerTest.php
+updated:
+    - routes/web.php
+models:
+    User: { name: 'string:255', email: 'string:255:unique', password: 'string:255' }
+    Category: { name: 'string:255' }
+    Product: { name: 'string:255', description: text, price: 'decimal:8,2', category_id: 'foreignId:categories' }
+    Order: { user_id: 'foreignId:users', product_id: 'foreignId:products', quantity: integer, status: 'string:50' }
