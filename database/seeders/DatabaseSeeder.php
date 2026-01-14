@@ -18,13 +18,13 @@ class DatabaseSeeder extends Seeder
         User::create([
             'name' => 'admin',
             'email' => 'admin@raf.rs',
-            'password' => Hash::make('lozinka123'),
+            'password' => Hash::make('Admin123@'),
         ]);
 
         User::create([
             'name' => 'Vojo',
             'email' => 'vbojovic2223it@raf.rs',
-            'password' => Hash::make('lozinka123'),
+            'password' => Hash::make('Admin123@'),
         ]);
 
         // 2. Kategorije (Tvoj original)
