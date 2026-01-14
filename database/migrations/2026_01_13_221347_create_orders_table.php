@@ -15,10 +15,12 @@ return new class extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->string('user_id');
-            $table->string('product_id');
+            // Ovo su polja koja ti fale da bi radilo:
+            $table->string('customer_name');
+            $table->string('product_name');
             $table->integer('quantity');
-            $table->string('status', 50);
+            $table->decimal('price', 10, 2);
+            $table->string('status')->default('Na čekanju');
             $table->timestamps();
         });
     }

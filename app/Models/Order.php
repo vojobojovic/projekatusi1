@@ -14,12 +14,7 @@ class Order extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'user_id',
-        'product_id',
-        'quantity',
-        'status',
-    ];
+    protected $fillable = ['customer_name', 'product_name', 'quantity', 'price', 'status'];
 
     /**
      * The attributes that should be cast to native types.
