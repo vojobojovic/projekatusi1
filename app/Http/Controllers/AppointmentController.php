@@ -11,6 +11,7 @@ class AppointmentController extends Controller
     public function index()
     {
         $appointments = Appointment::all();
+
         return view('appointments.index', compact('appointments'));
     }
 
@@ -38,6 +39,7 @@ class AppointmentController extends Controller
     public function edit($id)
     {
         $appointment = Appointment::findOrFail($id);
+
         return view('appointments.edit', compact('appointment'));
     }
 

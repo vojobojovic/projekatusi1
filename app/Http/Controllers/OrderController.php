@@ -11,6 +11,7 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::all();
+
         return view('orders.index', compact('orders'));
     }
 
@@ -37,6 +38,7 @@ class OrderController extends Controller
     public function edit($id)
     {
         $order = Order::findOrFail($id);
+
         return view('orders.edit', compact('order'));
     }
 
@@ -44,12 +46,14 @@ class OrderController extends Controller
     {
         $order = Order::findOrFail($id);
         $order->update($request->all());
+
         return redirect()->route('order.index');
     }
 
     public function destroy($id)
     {
         Order::findOrFail($id)->delete();
+
         return redirect()->route('order.index');
     }
 }

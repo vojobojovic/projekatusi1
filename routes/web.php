@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use App\Http\Controllers\ProductController;
-use App\Http\Controllers\OrderController;
-use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -25,7 +25,6 @@ Route::get('/dashboard', function () {
 
 // SVE OVE RUTE ISPOD ZAHTEVAJU LOGIN (Admin/User sekcija)
 Route::middleware('auth')->group(function () {
-
     // 1. Profil rute (Breeze automatski generisao)
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');

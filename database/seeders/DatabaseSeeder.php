@@ -2,12 +2,12 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Seeder;
+use App\Models\Appointment;
 use App\Models\Category;
+use App\Models\Order;
 use App\Models\Product;
 use App\Models\User;
-use App\Models\Order;
-use App\Models\Appointment;
+use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
@@ -38,42 +38,42 @@ class DatabaseSeeder extends Seeder
             'name' => 'Svilena haljina Wolley',
             'price' => 12500,
             'description' => 'Elegantna haljina od prirodne svile, šivena po meri.',
-            'category_id' => $haljine->id
+            'category_id' => $haljine->id,
         ]);
 
         Product::create([
             'name' => 'Lanene pantalone (sive)',
             'price' => 4800,
             'description' => 'Lagane letnje pantalone od lana.',
-            'category_id' => $pantalone->id
+            'category_id' => $pantalone->id,
         ]);
 
         Product::create([
             'name' => 'Muško odelo po meri',
             'price' => 28000,
             'description' => 'Vrhunski kroj, italijanski materijal.',
-            'category_id' => $odela->id
+            'category_id' => $odela->id,
         ]);
 
         Product::create([
             'name' => 'Letnja majica - pamuk',
             'price' => 2200,
             'description' => '100% pamuk sa unikatnim Wolley printom.',
-            'category_id' => $majice->id
+            'category_id' => $majice->id,
         ]);
 
         Product::create([
             'name' => 'Šorc za plažu',
             'price' => 3100,
             'description' => 'Brzosušeći materijal, moderan kroj.',
-            'category_id' => $majice->id
+            'category_id' => $majice->id,
         ]);
 
         Product::create([
             'name' => 'Svečana balska haljina',
             'price' => 45000,
             'description' => 'Unikatan rad sa kristalima i tilom.',
-            'category_id' => $haljine->id
+            'category_id' => $haljine->id,
         ]);
 
         // 4. Porudžbine Kupaca (5 primera prema tvojoj bazi)
@@ -93,9 +93,7 @@ class DatabaseSeeder extends Seeder
         Appointment::create([
             'customer_name' => 'Zorica Bojovic',
             'service_type' => 'Sivenje po meri',
-            'appointment_date' => '2004-02-04 05:22:00'
+            'appointment_date' => '2004-02-04 05:22:00',
         ]);
-
-
     }
 }

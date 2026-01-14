@@ -12,15 +12,15 @@ return new class extends Migration
      * @return void
      */
     public function up()
-{
-    Schema::create('appointments', function (Blueprint $table) {
-        $table->id();
-        $table->string('customer_name');
-        $table->string('service_type'); // npr. Šivenje odela, Prepravka
-        $table->dateTime('appointment_date');
-        $table->timestamps();
-    });
-}
+    {
+        Schema::create('appointments', function (Blueprint $table) {
+            $table->id();
+            $table->string('customer_name');
+            $table->string('service_type'); // npr. Šivenje odela, Prepravka
+            $table->dateTime('appointment_date');
+            $table->timestamps();
+        });
+    }
 
     /**
      * Reverse the migrations.

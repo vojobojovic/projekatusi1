@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Product;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductController extends Controller
@@ -15,6 +15,7 @@ class ProductController extends Controller
     {
         // Koristimo with('category') da izbegnemo "Nema" u koloni kategorija
         $products = Product::with('category')->get();
+
         return view('products_list', compact('products'));
     }
 
@@ -24,6 +25,7 @@ class ProductController extends Controller
     public function create()
     {
         $categories = Category::all();
+
         return view('product_create', compact('categories'));
     }
 
@@ -51,6 +53,7 @@ class ProductController extends Controller
     {
         $product = Product::findOrFail($id);
         $categories = Category::all();
+
         return view('product_edit', compact('product', 'categories'));
     }
 
@@ -82,6 +85,7 @@ class ProductController extends Controller
 
         return redirect()->route('product.index')->with('success', 'Proizvod je obrisan!');
     }
+
     public function show($id)
     {
         // Uzimamo proizvod iz baze po njegovom ID-u
