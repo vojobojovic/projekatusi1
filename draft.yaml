@@ -1,20 +1,30 @@
 models:
   Category:
     name: string:255
+
   Product:
     name: string:255
     description: text
     price: decimal:8,2
-    category_id: foreignId:categories
+    category_id: id
+
   User:
     name: string:255
     email: string:255:unique
     password: string:255
+
   Order:
-    user_id: foreignId:users
-    product_id: foreignId:products
+    customer_name: string
+    product_name: string
     quantity: integer
-    status: string:50
+    price: decimal:10,2
+    status: string default:'Na čekanju'
+
+  Appointment:
+    customer_name: string
+    service_type: string
+    appointment_date: datetime
+    status: string default:'Na čekanju'
 
 controllers:
   CategoryController:
@@ -25,9 +35,8 @@ controllers:
     resource: true
   OrderController:
     resource: true
+  AppointmentController:
+    resource: true
 
 seeders:
-  - Category
-  - Product
-  - User
-  - Order
+  - DatabaseSeeder
